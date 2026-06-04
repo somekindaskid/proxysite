@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse the web through Mullvad VPN with SOCKS5 routing.">
+  <meta name="theme-color" content="#050505">
+  <title>Mullvad Proxy</title>
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="/css/main.css">
+</head>
+<body>
+  <div class="bg" aria-hidden="true">
+    <div class="bg-gradient"></div>
+    <div class="bg-noise"></div>
+    <div class="bg-grid"></div>
+    <div class="bg-orbs">
+      <span class="orb orb-1"></span>
+      <span class="orb orb-2"></span>
+      <span class="orb orb-3"></span>
+    </div>
+    <div class="bg-scanline"></div>
+  </div>
+
+  <div class="page">
+    <main class="hero">
+      <header class="hero-head">
+        <div class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <h1 class="title-gradient">Mullvad Proxy</h1>
+        </div>
+        <p class="hero-tagline">Private browsing through Mullvad VPN</p>
+        <div id="vpn-pill" class="vpn-pill is-loading" role="status" aria-live="polite">
+          <span class="vpn-dot" aria-hidden="true"></span>
+          <span id="vpn-label">Checking connection…</span>
+        </div>
+      </header>
+
+      <section class="hero-card panel">
+        <form id="browse-form" class="browse-form" action="/browse" method="get">
+          <label for="url">Destination</label>
+          <div class="browse-row">
+            <input
+              id="url"
+              name="url"
+              type="url"
+              required
+              placeholder="https://example.com"
+              autocomplete="url"
+              spellcheck="false"
+              aria-label="Website URL"
+            >
+            <button type="submit" class="btn-primary" aria-label="Open URL">
+              <span class="btn-label">Open</span>
+            </button>
+          </div>
+        </form>
+
+        <div class="quick-links" aria-label="Shortcuts">
+          <span class="quick-label">Shortcuts</span>
+          <button type="button" class="quick-btn" data-url="https://am.i.mullvad.net">Exit IP</button>
+          <button type="button" class="quick-btn" data-url="https://duckduckgo.com">Search</button>
+        </div>
+      </section>
+
+      <section class="status-panel panel">
+        <div class="panel-head">
+          <h2>Network status</h2>
+          <button type="button" id="refresh-status" class="secondary">Refresh</button>
+        </div>
+        <dl id="status-details" class="status-details is-loading">
+          <div class="status-row">
+            <dt>State</dt>
+            <dd id="status-state">Checking…</dd>
+          </div>
+          <div class="status-row">
+            <dt>Exit IP</dt>
+            <dd id="status-ip">—</dd>
+          </div>
+          <div class="status-row">
+            <dt>Location</dt>
+            <dd id="status-location">—</dd>
+          </div>
+          <div class="status-row">
+            <dt>Relay</dt>
+            <dd id="status-relay">—</dd>
+          </div>
+        </dl>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>Not affiliated with Mullvad VPN AB</span>
+    </footer>
+  </div>
+
+  <script src="/js/main.js" defer></script>
+</body>
+</html>
