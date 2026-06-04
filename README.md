@@ -21,7 +21,7 @@ Web proxy that routes HTTP(S) traffic through [Mullvad VPN](https://mullvad.net)
 ## Install
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/mullvad-web-proxy.git
+git clone https://github.com/somekindaskid/proxysite.git
 cd mullvad-web-proxy
 npm install
 cp .env.example .env
